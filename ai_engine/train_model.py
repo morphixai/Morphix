@@ -57,8 +57,7 @@ def train_and_save_model(X_train, y_train, scaler):
     model = build_lstm_model((X_train.shape[1], X_train.shape[2]))
     
     model.fit(X_train, y_train, epochs=EPOCHS, batch_size=BATCH_SIZE)
-    model.save("models/lstm_model.keras")
-
+    model.save(MODEL_PATH)
     
     print(f"✅ Model Trained and Saved at {MODEL_PATH}")
     return model, scaler
